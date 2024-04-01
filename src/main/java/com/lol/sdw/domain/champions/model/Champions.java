@@ -31,4 +31,13 @@ public class Champions {
         this.lore = data.lore();
         this.imageUrl = data.imageUrl();
     }
+
+    public String generateContextByQuestion(String question) {
+        return String.format("""
+            Question: %s
+            Name of the champion: %s
+            Role of the champion: %s
+            Lore of the champion: %s
+            """, question, this.getName(), this.getRole(), this.getLore());
+    }
 }
