@@ -1,4 +1,6 @@
 # Santander Dev Week 2024 - Projeto Integrador
+![images](https://github.com/karGuimaraes/santander-dev-week/assets/39937365/d2cf69a1-aea3-4f34-a348-8441bc3980a4)
+
 
 Este projeto foi desenvolvido durante o Santander Dev Week 2024 com o objetivo de permitir que os usuários conversem com os campeões do League of Legends (LOL) por meio de uma API. Abaixo estão os pré-requisitos necessários para reproduzir este projeto:
 
@@ -60,3 +62,5 @@ git clone https://github.com/karGuimaraes/santander-dev-week.git
 ```
 
 5. Acesse a documentação da API Swagger em [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html) para explorar os endpoints disponíveis.
+![image](https://github.com/karGuimaraes/santander-dev-week/assets/39937365/6250259c-a189-4f88-b84e-50221696a9f1)
+
