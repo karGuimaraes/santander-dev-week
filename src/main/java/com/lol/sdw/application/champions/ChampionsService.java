@@ -10,11 +10,15 @@ import org.springframework.web.server.ResponseStatusException;
 import com.lol.sdw.domain.champions.dto.ChampionsResponseDTO;
 import com.lol.sdw.domain.champions.model.Champions;
 import com.lol.sdw.domain.champions.ports.ChampionsRepository;
+import com.lol.sdw.domain.champions.ports.GenerativeAiApi;
 
 @Service
 public class ChampionsService {
     @Autowired
     private ChampionsRepository championsRepository;
+
+    @Autowired
+    private GenerativeAiApi generativeAiApi;
 
     public List<ChampionsResponseDTO> getAll(String name, String role) {
         List<ChampionsResponseDTO> champions;
@@ -41,6 +45,12 @@ public class ChampionsService {
                                             .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Champion not found"));
         String championContext = champion.generateContextByQuestion(question);
 
-        return championContext;
+        String objective = """
+                Atue como um chatbot com habilidade de se comportar como os campeões do jogo League of Legends.
+                Responda as perguntas incorporando a personalidade e estilo de um determinado campeão.
+                Segue a pergunta, o nome do campeão, o papel do campeão e sua história:
+
+                """;
+        return generativeAiApi.generateContent(objective, championContext);
     }
 }
