@@ -61,7 +61,7 @@ git clone https://github.com/karGuimaraes/santander-dev-week.git
 4. Execute o projeto a partir da sua IDE ou utilizando o Maven:
 
 ```
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 5. Acesse a documentação da API Swagger em [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html) para explorar os endpoints disponíveis.
